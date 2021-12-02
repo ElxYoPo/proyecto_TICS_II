@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const {MongoClient} = require('mongodb');
 
 require('dotenv').config();
 
@@ -13,7 +12,7 @@ const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
-    console.log("Se estableció la conexión a MongoDB merita!!");
+    console.log("Se estableció la conexión a MongoDB!!");
 })
 
 app.use("/user", require("./routes/user"));
@@ -25,5 +24,5 @@ app.use("/producto", require("./routes/producto"));
 app.use("/solicitud", require("./routes/solicitud"));
 
 app.listen(3001, function() {
-    console.log("merita chupelo en el puerto 3001");
+    console.log("Servidor conectado en el puerto 3001");
 })

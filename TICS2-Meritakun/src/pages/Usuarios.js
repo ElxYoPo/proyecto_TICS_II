@@ -37,13 +37,13 @@ export class Usuarios extends Component {
                 <div className='contenido'>
                     <Button onClick={() => window.location='/crearUsuario'} variant="primary">+ Añadir usuario</Button>{' '}
                     <br />
-                    {/* {this.state.usuarios.map(function(user) {
+                    {this.state.usuarios.map(function(user) {
                         return(
                             <div>
-                                <p>user.nombre</p>
+                                <p>{user.nombre}</p>
                             </div>
                         )
-                    })} */}
+                    })}
                 </div>
             </div>
         )

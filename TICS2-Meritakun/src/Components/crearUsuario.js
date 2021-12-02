@@ -69,13 +69,14 @@ export class CrearUsuario extends Component {
                             <label>N. de usuario: </label>
                             <input type="text" className="form-control" required value={this.state.username} onChange={this.usernameCambio}></input>
                             <label>Contraseña: </label>
-                            <input type="text" className="form-control" required value={this.state.password} onChange={this.passwordCambio}></input>
+                            <input type="password" className="form-control" required value={this.state.password} onChange={this.passwordCambio}></input>
                             <label>Correo electrónico: </label>
                             <input type="text" className="form-control" required value={this.state.email} onChange={this.emailCambio}></input>
                             <label>Tipo de usuario: </label>
                             <select className="form-control" value={this.state.tipo} onChange={this.tipoCambio}>
                                 <option key="admin" value="admin">Administrador</option>
                                 <option key="secre" value="secre">Secretari@ creo que le pusimos no recuerdo si lo cambiamos exdi</option>
+                                <option key="opera" value="opera">Operario@ creo que le pusimos no recuerdo si lo cambiamos exdi</option>
                                 <option key="" value="">Indefinido jeje pero se guarda como secre SE SUPONE PORQUE ASÍ LO DEFINÍ EN EL BACKEND</option>
                             </select>
                         </div>

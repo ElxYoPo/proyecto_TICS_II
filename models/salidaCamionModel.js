@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const autoIncrementModelID = require('../helpers/counterModel');
 
-const lsCamionSchema = new Schema({
+const salidaCamionSchema = new Schema({
     id: { 
         type: Number,
         unique: true,
@@ -11,15 +11,15 @@ const lsCamionSchema = new Schema({
     },
     idCamion: Number,
     idBodega: Number,
-    fechaLS: Date,
-    idSL: Number,
+    fechaSalida: Date,
+    idLlegada: Number,
     cantidad: Number,
     codProducto: String
 }, {
     timestamps: true
 });
 
-lsCamionSchema.pre('save', function (next) {
+salidaCamionSchema.pre('save', function (next) {
     if (!this.isNew) {
         next();
         return;
@@ -29,7 +29,6 @@ lsCamionSchema.pre('save', function (next) {
 });
   
 
-const LlegadaCamion = mongoose.model("LlegadaCamion", lsCamionSchema);
-const SalidaCamion = mongoose.model("SalidaCamion", lsCamionSchema);
+const SalidaCamion = mongoose.model("SalidaCamion", salidaCamionSchema);
 
-module.exports = LlegadaCamion, SalidaCamion;
+module.exports = SalidaCamion;

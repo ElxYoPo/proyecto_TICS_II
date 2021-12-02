@@ -1,13 +1,17 @@
 const router = require("express").Router();
-const { LlegadaCamion, SalidaCamion } = require("../models/lsCamionModel");
+const LlegadaCamion = require("../models/llegadaCamionModel");
+const SalidaCamion = require("../models/salidaCamionModel");
 
-router.route('/').get((req, res) => {
-    LlegadaCamion.find()
-        .then(LSCamiones => res.json(LSCamiones))
-        .catch(err => res.status(400).json('Ha ocurrido el sgte error mera-kun: ' + err));
+router.route('/salidas').get((req, res) => {
     
     SalidaCamion.find()
-        .then(LSCamiones => res.json(LSCamiones))
+        .then(SalidaCamiones => res.json(SalidaCamiones))
+        .catch(err => res.status(400).json('Ha ocurrido el sgte error mera-kun: ' + err));
+});
+
+router.route('/llegadas').get((req, res) => {
+    LlegadaCamion.find()
+        .then(LlegadaCamiones => res.json(LlegadaCamiones))
         .catch(err => res.status(400).json('Ha ocurrido el sgte error mera-kun: ' + err));
 });
 
